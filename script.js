@@ -15,7 +15,10 @@ function addTaskToUList(tasks) {
 // Get input from HTML text box
 function getInput() {
     let inputTask = document.getElementById("task").value;
+
+    //Reset HTML text box
     document.getElementById("task").value = "";
+
     tasks.push(inputTask);
     addTaskToUList(tasks);
 }
