@@ -15,6 +15,36 @@
         />
     </head>
     <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <header>
+                        <h1>TODO list</h1>
+                    </header>
+                </div>
+            </div>
+            <div class="row row-input align-items-center">
+                <div class="col col-12 col-md-3">
+                    <label for="">Skriv in uppgift:</label>
+                </div>
+                <div class="col col-12 col-md-7">
+                    <input
+                        type="text"
+                        id="task"
+                        name="task"
+                        required
+                        minlength="2"
+                        maxlength="100"
+                    /><br />
+                </div>
+                <div class="col col-12 col-md-2">
+                    <button type="button" id="btnAdd" class="btn btn-primary">
+                        Lägg till
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script
