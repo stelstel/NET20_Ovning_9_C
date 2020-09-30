@@ -2,7 +2,7 @@ let tasks = [];
 
 function getInput() {
     let inputTask = document.getElementById("task").value;
-    document.getElementById("task").innerHTML = "";
+    document.getElementById("task").value = "";
     tasks.push(inputTask);
     console.log("T: " + tasks);
 }
