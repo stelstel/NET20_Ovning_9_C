@@ -11,10 +11,6 @@ function addTaskToUList(tasks) {
         li.appendChild(document.createTextNode(task));
         ul.appendChild(li);
     });
-
-    for (let i = 0; i < ul.childNodes.length; i++) {
-        const element = ul.childNodes[i];
-    }
 }
 
 // Get input from HTML text box *******************************

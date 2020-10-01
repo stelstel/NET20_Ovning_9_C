@@ -30,3 +30,7 @@ input#task {
     text-decoration: line-through;
     background: #bbb;
 }
+
+li {
+    cursor: pointer;
+}
