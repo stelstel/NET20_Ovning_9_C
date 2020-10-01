@@ -14,18 +14,13 @@ function addTaskToUList(tasks) {
         //li.addEventListener("click", listItemClicked);
 
         //li.appendChild(document.createTextNode(task));
-
-        /*
-        var btn = document.createElement("BUTTON");   // Create a <button> element
-        btn.innerHTML = "CLICK ME";
-        */
-        let liTex = document.createElement("p");
-        liTex.innerHTML = task;
-        li.appendChild(liTex);
+        let liParagraph = document.createElement("p");
+        liParagraph.innerHTML = task;
+        li.appendChild(liParagraph);
 
         li.id = "li-" + counter;
 
-        let liText = li.innerText;
+        //let liText = li.innerText;
 
         //let benny = document.querySelector("li#li-" + counter + " p");
         // benny.addEventListener("click", listItemClicked);
@@ -38,10 +33,11 @@ function addTaskToUList(tasks) {
         let imgTrash = document.createElement("img");
         imgTrash.src = "images/trash.png";
         imgTrash.id = "image-" + counter;
+        imgTrash.addEventListener("click", deleteItem);
         li.appendChild(imgTrash);
         ul.appendChild(li);
-        let benny = document.querySelector("li#li-" + counter + " p");
-        benny.addEventListener("click", listItemClicked);
+        let liText = document.querySelector("li#li-" + counter + " p");
+        liText.addEventListener("click", listItemClicked);
         counter++;
     });
 }
@@ -62,6 +58,18 @@ function listItemClicked() {
         this.classList.add("bought");
     } else {
         this.classList.remove("bought");
+    }
+}
+
+function deleteItem() {
+    console.log("Muffe: "); /////////////
+    console.dir(this.parentElement); ///////////////
+    this.parentElement.remove(); // Remove from DOM
+
+    for (let i = 0; i < tasks.length; i++) {
+        const element = tasks[i];
+        console.log("Element: " + element);
+        console.dir("This inner: " + this.parentElement.innerHTML); ////////
     }
 }
 
