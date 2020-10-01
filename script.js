@@ -4,7 +4,8 @@ ul ->
             p
             img
 */
-let tasks = []; // Array of objects
+
+let tasks = []; // Array of objects. taskObject = { text: inputTaskTxt, bought: false };
 
 // Add task to unordered list *********************************
 function addTaskToUList(tasks) {
