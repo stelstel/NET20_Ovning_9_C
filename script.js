@@ -24,3 +24,9 @@ function getInput() {
 }
 
 document.getElementById("btnAdd").addEventListener("click", getInput);
+
+document.querySelector("#taskList").addEventListener("click", listItemClicked);
+
+function listItemClicked() {
+    alert(this.value);
+}
