@@ -76,8 +76,7 @@ function getInput() {
 
 // User clicked on list item text, change to/from bought **********
 function onListItemClick() {
-    let ListItemId = this.parentElement.id;
-    ListItemIndex = ListItemId.substring(3);
+    let ListItemIndex = this.parentElement.id.substring(3);
 
     if (!this.parentElement.classList.contains("bought")) {
         this.parentElement.classList.add("bought");
@@ -88,7 +87,7 @@ function onListItemClick() {
     }
 }
 
-// User clicked on list item image, delete *************************
+// User clicked on list item image, delete list item *************************
 function deleteItem() {
     this.parentElement.remove(); // Remove from DOM
     paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
