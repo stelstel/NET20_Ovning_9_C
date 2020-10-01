@@ -7,12 +7,16 @@ function addTaskToUList(tasks) {
     var ul = document.getElementById("taskList");
     ul.innerHTML = "";
 
+    let counter = 0;
+
     tasks.forEach((task) => {
         let li = document.createElement("li");
         li.addEventListener("click", listItemClicked);
         li.appendChild(document.createTextNode(task));
+        li.id = "kurt" + counter;
         li.appendChild(imgTrash);
         ul.appendChild(li);
+        counter++;
     });
 }
 
