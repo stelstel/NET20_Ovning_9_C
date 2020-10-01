@@ -55,7 +55,6 @@ function addTaskToUList(tasks) {
 
         counter++;
     });
-    // console.table(tasks); /////////////////////////
 }
 
 // Get input from HTML text box *******************************
