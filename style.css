@@ -34,3 +34,7 @@ input#task {
 li {
     cursor: pointer;
 }
+
+li p {
+    display: inline;
+}
