@@ -1,6 +1,7 @@
 let tasks = [];
 let imgTrash = document.createElement("img");
 imgTrash.src = "images/trash.png";
+imgTrash.id;
 
 // Add task to unordered list *********************************
 function addTaskToUList(tasks) {
@@ -14,6 +15,7 @@ function addTaskToUList(tasks) {
         li.addEventListener("click", listItemClicked);
         li.appendChild(document.createTextNode(task));
         li.id = "kurt" + counter;
+        imgTrash.id = "image-" + counter;
         li.appendChild(imgTrash);
         ul.appendChild(li);
         counter++;
