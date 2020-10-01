@@ -66,10 +66,18 @@ function deleteItem() {
     console.dir(this.parentElement); ///////////////
     this.parentElement.remove(); // Remove from DOM
 
+    paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
+
+    // Remove from array
     for (let i = 0; i < tasks.length; i++) {
         const element = tasks[i];
         console.log("Element: " + element);
-        console.dir("This inner: " + this.parentElement.innerHTML); ////////
+        console.dir(
+            "This inner: " + this.parentElement.querySelector("p").innerHTML
+        ); ////////
+        if (element === paragraphInCaller) {
+            tasks.splice(i, 1);
+        }
     }
 }
 
