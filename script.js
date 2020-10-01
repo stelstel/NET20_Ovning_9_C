@@ -41,6 +41,9 @@ function addTaskToUList(tasks) {
         if (task.bought == true) {
             li.classList.add("bought");
         } else {
+            if (li.classList.contains("bought")) {
+                li.classList.remove("bought");
+            }
         }
 
         // Put li in ul
@@ -61,6 +64,7 @@ function getInput() {
 
     //Reset HTML text box
     document.getElementById("task").value = "";
+
     let taskObject = {
         text: inputTaskTxt,
         bought: false,
@@ -75,11 +79,11 @@ function onListItemClick() {
     let ListItemId = this.parentElement.id;
     ListItemIndex = ListItemId.substring(3);
 
-    if (!this.classList.contains("bought")) {
-        this.classList.add("bought");
+    if (!this.parentElement.classList.contains("bought")) {
+        this.parentElement.classList.add("bought");
         tasks[ListItemIndex].bought = true;
     } else {
-        this.classList.remove("bought");
+        this.parentElement.classList.remove("bought");
         tasks[ListItemIndex].bought = false;
     }
 }
