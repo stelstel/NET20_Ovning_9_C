@@ -4,7 +4,7 @@ ul ->
             p
             img
 */
-let tasks = [];
+let tasks = []; // Array of objects
 
 // Add task to unordered list *********************************
 function addTaskToUList(tasks) {
@@ -52,7 +52,7 @@ function addTaskToUList(tasks) {
 
         counter++;
     });
-    console.table(tasks); /////////////////////////
+    // console.table(tasks); /////////////////////////
 }
 
 // Get input from HTML text box *******************************
@@ -70,7 +70,7 @@ function getInput() {
     addTaskToUList(tasks);
 }
 
-// User clicked on list item text, change item text look
+// User clicked on list item text, change to/from bought **********
 function onListItemClick() {
     let ListItemId = this.parentElement.id;
     ListItemIndex = ListItemId.substring(3);
@@ -84,7 +84,7 @@ function onListItemClick() {
     }
 }
 
-// User clicked on list item image, delete
+// User clicked on list item image, delete *************************
 function deleteItem() {
     this.parentElement.remove(); // Remove from DOM
     paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
