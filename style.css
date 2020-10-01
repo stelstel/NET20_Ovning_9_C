@@ -25,3 +25,8 @@ input#task {
     text-align: left;
     padding-left: 0;
 }
+
+.bought {
+    text-decoration: line-through;
+    background: #bbb;
+}

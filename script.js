@@ -1,18 +1,23 @@
 let tasks = [];
 
-// Add task to unordered list
+// Add task to unordered list *********************************
 function addTaskToUList(tasks) {
     var ul = document.getElementById("taskList");
     ul.innerHTML = "";
 
     tasks.forEach((task) => {
-        var li = document.createElement("li");
+        let li = document.createElement("li");
+        li.addEventListener("click", listItemClicked);
         li.appendChild(document.createTextNode(task));
         ul.appendChild(li);
     });
+
+    for (let i = 0; i < ul.childNodes.length; i++) {
+        const element = ul.childNodes[i];
+    }
 }
 
-// Get input from HTML text box
+// Get input from HTML text box *******************************
 function getInput() {
     let inputTask = document.getElementById("task").value;
 
@@ -23,10 +28,12 @@ function getInput() {
     addTaskToUList(tasks);
 }
 
-document.getElementById("btnAdd").addEventListener("click", getInput);
-
-document.querySelector("#taskList").addEventListener("click", listItemClicked);
-
 function listItemClicked() {
-    alert(this.value);
+    if (!this.classList.contains("bought")) {
+        this.classList.add("bought");
+    } else {
+        this.classList.remove("bought");
+    }
 }
+
+document.getElementById("btnAdd").addEventListener("click", getInput);
