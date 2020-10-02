@@ -94,16 +94,8 @@ function onListItemTextClick() {
 // User clicked on list item image, delete item **********************************
 function deleteItem() {
     this.parentElement.remove(); // Remove from DOM
-    let paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
-
-    // Remove from array
-    for (let i = 0; i < tasks.length; i++) {
-        const paragraphInArray = tasks[i].text;
-
-        if (paragraphInArray === paragraphInCaller) {
-            tasks.splice(i, 1);
-        }
-    }
+    let listItemIndex = this.parentElement.id.substring(3);
+    tasks.splice(listItemIndex, 1);
 }
 
 function validateInput(input) {
