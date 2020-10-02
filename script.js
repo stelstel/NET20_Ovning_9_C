@@ -27,7 +27,8 @@ function addTaskToUList(tasks) {
         li.appendChild(liParagraph);
 
         // Give li an id
-        li.id = "li-" + counter;
+        const listPrefix = "li-";
+        li.id = listPrefix + counter;
 
         // Create image
         let imgTrash = document.createElement("img");
@@ -51,7 +52,9 @@ function addTaskToUList(tasks) {
         ul.appendChild(li);
 
         // Add event listener to p
-        let liText = document.querySelector("li#li-" + counter + " p");
+        let liText = document.querySelector(
+            "li#" + listPrefix + counter + " p"
+        );
         liText.addEventListener("click", onListItemClick);
 
         counter++;

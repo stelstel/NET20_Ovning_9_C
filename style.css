@@ -1,4 +1,7 @@
 /* style.css */
+html body {
+    background-color: aliceblue;
+}
 
 h1 {
     font-family: fantasy;
@@ -81,5 +84,12 @@ li p {
     #btnAdd {
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    ul#taskList {
+        margin-left: 10vw;
+        margin-top: 1vw;
     }
 }
