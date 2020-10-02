@@ -91,7 +91,7 @@ function onListItemTextClick() {
     }
 }
 
-// User clicked on list item image, delete list item *************************
+// User clicked on list item image, delete item **********************************
 function deleteItem() {
     this.parentElement.remove(); // Remove from DOM
     let paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
