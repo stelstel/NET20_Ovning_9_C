@@ -14,6 +14,7 @@
             crossorigin="anonymous"
         />
     </head>
+
     <body>
         <div class="container">
             <div class="row">
@@ -23,31 +24,25 @@
                     </header>
                 </div>
             </div>
+
             <div class="row row-input align-items-center">
                 <div class="col col-12 col-md-3">
-                    <label for="">Skriv in uppgift:</label>
+                    <label for="task">Skriv in uppgift:</label>
                 </div>
                 <div class="col col-12 col-md-7">
-                    <input
-                        type="text"
-                        id="task"
-                        name="task"
-                        required="required"
-                        minlength="2"
-                        maxlength="100"
-                    /><br />
+                    <input type="text" id="task" name="task" required="required" minlength="2" maxlength="100" /><br />
                 </div>
                 <div class="col col-12 col-md-2">
-                    <button type="button" id="btnAdd" class="btn btn-primary">
-                        Lägg till
-                    </button>
+                    <button type="button" id="btnAdd" class="btn btn-primary">Lägg till</button>
                 </div>
             </div>
+
             <div class="row warning-row justify-content-center">
                 <div col-12>
                     <div class="alert alert-warning" role="alert">-</div>
                 </div>
             </div>
+
             <div class="row">
                 <div col-12>
                     <ul id="taskList"></ul>
