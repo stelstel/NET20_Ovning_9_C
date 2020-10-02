@@ -65,10 +65,13 @@ input#task {
     margin-bottom: 0.6vw;
 }
 
+#taskList img {
+    margin-left: 1.5vw;
+}
+
 @media (max-width: 767px) {
     #taskList img {
         margin-bottom: 7px;
-        margin-left: 2vw;
     }
 }
 
