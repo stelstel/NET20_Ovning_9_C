@@ -65,13 +65,15 @@ function getInput() {
     //Reset HTML text box
     document.getElementById("task").value = "";
 
-    let taskObject = {
-        text: inputTaskTxt,
-        bought: false,
-    };
+    if (validateInput(inputTaskTxt)) {
+        let taskObject = {
+            text: inputTaskTxt,
+            bought: false,
+        };
 
-    tasks.push(taskObject);
-    addTaskToUList(tasks);
+        tasks.push(taskObject);
+        addTaskToUList(tasks);
+    }
 }
 
 // User clicked on list item text, change to/from bought *******************
@@ -99,6 +101,36 @@ function deleteItem() {
         if (paragraphInArray === paragraphInCaller) {
             tasks.splice(i, 1);
         }
+    }
+}
+
+function validateInput(input) {
+    let minInputLength = 2;
+    let maxInputLength = 100;
+
+    if (input.length >= minInputLength && input.length <= maxInputLength) {
+        // Hide warning
+        document.querySelector(".alert.alert-warning").style.height = "0";
+        document.querySelector(".alert.alert-warning").style.padding = "0";
+        document.querySelector(".alert.alert-warning").style.visibility =
+            "hidden";
+
+        return true;
+    } else {
+        // Show warning
+        document.querySelector(".alert.alert-warning").textContent =
+            "Längden på texten måste vara mellan 2 och 100!";
+        document.querySelector(
+            ".warning-row .alert.alert-warning"
+        ).style.height = "51px";
+        document.querySelector(
+            ".warning-row .alert.alert-warning"
+        ).style.padding = "12px";
+        document.querySelector(
+            ".warning-row .alert.alert-warning"
+        ).style.visibility = "visible";
+
+        return false;
     }
 }
 
