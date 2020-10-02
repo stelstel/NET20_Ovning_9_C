@@ -40,10 +40,10 @@ function addTaskToUList(tasks) {
         li.appendChild(imgTrash);
 
         if (task.bought == true) {
-            li.classList.add("bought");
+            liParagraph.classList.add("bought");
         } else {
-            if (li.classList.contains("bought")) {
-                li.classList.remove("bought");
+            if (liParagraph.classList.contains("bought")) {
+                liParagraph.classList.remove("bought");
             }
         }
 
@@ -80,11 +80,11 @@ function getInput() {
 function onListItemClick() {
     let ListItemIndex = this.parentElement.id.substring(3);
 
-    if (!this.parentElement.classList.contains("bought")) {
-        this.parentElement.classList.add("bought");
+    if (!this.classList.contains("bought")) {
+        this.classList.add("bought");
         tasks[ListItemIndex].bought = true;
     } else {
-        this.parentElement.classList.remove("bought");
+        this.classList.remove("bought");
         tasks[ListItemIndex].bought = false;
     }
 }
@@ -110,7 +110,7 @@ function validateInput(input) {
 
     if (input.length >= minInputLength && input.length <= maxInputLength) {
         // Hide warning
-        document.querySelector(".alert.alert-warning").style.height = "0";
+        //document.querySelector(".alert.alert-warning").style.height = "0";
         document.querySelector(".alert.alert-warning").style.padding = "0";
         document.querySelector(".alert.alert-warning").style.visibility =
             "hidden";
@@ -120,9 +120,9 @@ function validateInput(input) {
         // Show warning
         document.querySelector(".alert.alert-warning").textContent =
             "Längden på texten måste vara mellan 2 och 100!";
-        document.querySelector(
-            ".warning-row .alert.alert-warning"
-        ).style.height = "51px";
+        //document.querySelector(
+        //    ".warning-row .alert.alert-warning"
+        //).style.height = "51px";
         document.querySelector(
             ".warning-row .alert.alert-warning"
         ).style.padding = "12px";

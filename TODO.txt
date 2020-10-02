@@ -1,5 +1,5 @@
-Kolla längden på task input text med html5 IGNORERAS
-Return ska klicka på knapp DEPRECATED
 Snygga till mobil
 Flytta trash can till höger
-Kolla längden på task input text med js
+
+Kolla längden på task input text med html5 IGNORERAS
+Return ska klicka på knapp DEPRECATED

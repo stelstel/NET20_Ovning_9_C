@@ -9,8 +9,19 @@ input#task {
 }
 
 .row-input .col:nth-child(1) {
-    text-align: right;
     padding-right: 0;
+}
+
+@media (max-width: 767px) {
+    .row-input .col:nth-child(1) {
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .row-input .col:nth-child(1) {
+        text-align: right;
+    }
 }
 
 .row-input .col:nth-child(1) label {
@@ -21,14 +32,27 @@ input#task {
     padding: 0 1vw;
 }
 
-.row-input .col:nth-child(3) {
-    text-align: left;
-    padding-left: 0;
+@media (max-width: 767px) {
+    .row-input .col:nth-child(3) {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .row-input .col:nth-child(3) {
+        text-align: left;
+        padding-left: 0;
+    }
 }
 
 .bought {
     text-decoration: line-through;
     background: #bbb;
+}
+
+#taskList img {
+    margin-bottom: 8px;
+    margin-left: 2vw;
 }
 
 li {
@@ -39,9 +63,23 @@ li p {
     display: inline;
 }
 
-.alert.alert-warning {
+.warning-row {
     height: 0;
+}
+
+.alert.alert-warning {
+    height: auto;
     padding: 0;
     visibility: hidden;
     border: 1px solid #555;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 767px) {
+    #btnAdd {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
