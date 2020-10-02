@@ -7,7 +7,7 @@ ul ->
 
 let tasks = []; // Array of objects. taskObject = { text: inputTaskTxt, bought: false };
 
-// Add task to unordered list *********************************
+// Add task to unordered list ***********************************************************
 function addTaskToUList(tasks) {
     var ul = document.getElementById("taskList");
     ul.innerHTML = "";
@@ -58,7 +58,7 @@ function addTaskToUList(tasks) {
     });
 }
 
-// Get input from HTML text box *******************************
+// User clicked button. Get input from HTML text box *******************************
 function getInput() {
     let inputTaskTxt = document.getElementById("task").value;
 
@@ -74,7 +74,7 @@ function getInput() {
     addTaskToUList(tasks);
 }
 
-// User clicked on list item text, change to/from bought **********
+// User clicked on list item text, change to/from bought *******************
 function onListItemClick() {
     let ListItemIndex = this.parentElement.id.substring(3);
 
@@ -101,5 +101,12 @@ function deleteItem() {
         }
     }
 }
+
+// User clicked enter key ******************************************************
+document.addEventListener("keydown", function (event) {
+    if (event.which === 13) {
+        document.querySelector("#btnAdd").click();
+    }
+});
 
 document.getElementById("btnAdd").addEventListener("click", getInput);

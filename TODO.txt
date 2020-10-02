@@ -1,4 +1,4 @@
 Kolla längden på task input text med html5 (Och med js?)
-Return ska klicka på knapp
+Return ska klicka på knapp DEPRECATED
 Snygga till mobil
 Flytta trash can till höger
