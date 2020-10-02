@@ -101,6 +101,7 @@ function deleteItem() {
 function validateInput(input) {
     let minInputLength = 2;
     let maxInputLength = 100;
+    let msgWarning = "Längden på texten måste vara mellan ";
 
     if (input.length >= minInputLength && input.length <= maxInputLength) {
         // Hide warning
@@ -111,7 +112,7 @@ function validateInput(input) {
     } else {
         // Show warning
         document.querySelector(".alert.alert-warning").textContent =
-            "Längden på texten måste vara mellan " + minInputLength + " och " + maxInputLength + "!";
+            msgWarning + minInputLength + " och " + maxInputLength + "!";
         document.querySelector(".warning-row .alert.alert-warning").style.padding = "12px";
         document.querySelector(".warning-row .alert.alert-warning").style.visibility = "visible";
 
