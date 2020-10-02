@@ -5,14 +5,14 @@ ul ->
             img
 */
 
-let tasks = []; // Array of objects. taskObject = { text: inputTaskTxt, bought: false };
+let tasks = []; // Array of objects: taskObject = { text: inputTaskTxt, bought: false };
 
 // Add task to unordered list ***********************************************************
 function addTaskToUList(tasks) {
     let ul = document.getElementById("taskList");
-    ul.innerHTML = "";
+    ul.innerHTML = ""; // Empty the ul
     let counter = 0;
-    const listPrefix = "li-";
+    const listIdPrefix = "li-";
 
     tasks.forEach((task) => {
         // Create li
@@ -28,7 +28,7 @@ function addTaskToUList(tasks) {
         li.appendChild(liParagraph);
 
         // Give li an id
-        li.id = listPrefix + counter;
+        li.id = listIdPrefix + counter;
 
         // Create image
         let imgTrash = document.createElement("img");
@@ -52,8 +52,8 @@ function addTaskToUList(tasks) {
         ul.appendChild(li);
 
         // Add event listener to p
-        let liText = document.querySelector("li#" + listPrefix + counter + " p");
-        liText.addEventListener("click", onListItemClick);
+        let PText = document.querySelector("li#" + listIdPrefix + counter + " p");
+        PText.addEventListener("click", onListItemTextClick);
 
         counter++;
     });
@@ -77,23 +77,24 @@ function getInput() {
     }
 }
 
-// User clicked on list item text, change to/from bought *******************
-function onListItemClick() {
-    let ListItemIndex = this.parentElement.id.substring(3);
+// User clicked on list item text, toggle bought ****************************
+function onListItemTextClick() {
+    let listItemIndex = this.parentElement.id.substring(3);
 
+    // Toggle bought
     if (!this.classList.contains("bought")) {
         this.classList.add("bought");
-        tasks[ListItemIndex].bought = true;
+        tasks[listItemIndex].bought = true;
     } else {
         this.classList.remove("bought");
-        tasks[ListItemIndex].bought = false;
+        tasks[listItemIndex].bought = false;
     }
 }
 
 // User clicked on list item image, delete list item *************************
 function deleteItem() {
     this.parentElement.remove(); // Remove from DOM
-    paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
+    let paragraphInCaller = this.parentElement.querySelector("p").innerHTML;
 
     // Remove from array
     for (let i = 0; i < tasks.length; i++) {
