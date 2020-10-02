@@ -9,9 +9,10 @@ let tasks = []; // Array of objects. taskObject = { text: inputTaskTxt, bought: 
 
 // Add task to unordered list ***********************************************************
 function addTaskToUList(tasks) {
-    var ul = document.getElementById("taskList");
+    let ul = document.getElementById("taskList");
     ul.innerHTML = "";
     let counter = 0;
+    const listPrefix = "li-";
 
     tasks.forEach((task) => {
         // Create li
@@ -27,7 +28,6 @@ function addTaskToUList(tasks) {
         li.appendChild(liParagraph);
 
         // Give li an id
-        const listPrefix = "li-";
         li.id = listPrefix + counter;
 
         // Create image
@@ -113,7 +113,6 @@ function validateInput(input) {
 
     if (input.length >= minInputLength && input.length <= maxInputLength) {
         // Hide warning
-        //document.querySelector(".alert.alert-warning").style.height = "0";
         document.querySelector(".alert.alert-warning").style.padding = "0";
         document.querySelector(".alert.alert-warning").style.visibility =
             "hidden";
@@ -123,9 +122,6 @@ function validateInput(input) {
         // Show warning
         document.querySelector(".alert.alert-warning").textContent =
             "Längden på texten måste vara mellan 2 och 100!";
-        //document.querySelector(
-        //    ".warning-row .alert.alert-warning"
-        //).style.height = "51px";
         document.querySelector(
             ".warning-row .alert.alert-warning"
         ).style.padding = "12px";
