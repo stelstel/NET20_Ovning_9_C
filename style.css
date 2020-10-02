@@ -64,6 +64,7 @@ li {
 
 li p {
     display: inline;
+    word-break: break-word;
 }
 
 .warning-row {
