@@ -53,13 +53,28 @@ input#task {
     background: #bbb;
 }
 
+#taskList {
+    visibility: hidden;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
 #taskList img {
-    margin-bottom: 8px;
-    margin-left: 2vw;
+    margin-bottom: 0.6vw;
+}
+
+@media (max-width: 767px) {
+    #taskList img {
+        margin-bottom: 7px;
+        margin-left: 2vw;
+    }
 }
 
 li {
     cursor: pointer;
+    padding-top: 3px;
+    padding-right: 1vw;
 }
 
 li p {
@@ -89,9 +104,23 @@ li p {
     }
 }
 
+ul#taskList {
+    margin: 0 1vw;
+    background-color: white;
+    border: 1px solid #555;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 @media (min-width: 768px) {
     ul#taskList {
         margin-left: 10vw;
-        margin-top: 1vw;
+        margin-top: 1.3vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .row-list {
+        justify-content: center;
     }
 }

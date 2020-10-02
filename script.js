@@ -14,6 +14,12 @@ function addTaskToUList(tasks) {
     let counter = 0;
     const listIdPrefix = "li-";
 
+    if (tasks.length > 0) {
+        document.querySelector("#taskList").style.visibility = "visible";
+    } else {
+        document.querySelector("#taskList").style.visibility = "hidden";
+    }
+
     tasks.forEach((task) => {
         // Create li
         let li = document.createElement("li");
@@ -96,8 +102,10 @@ function deleteItem() {
     this.parentElement.remove(); // Remove from DOM
     let listItemIndex = this.parentElement.id.substring(3);
     tasks.splice(listItemIndex, 1);
+    addTaskToUList(tasks);
 }
 
+// Validate input *****************************************************************
 function validateInput(input) {
     let minInputLength = 2;
     let maxInputLength = 100;
