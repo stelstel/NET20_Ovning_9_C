@@ -52,9 +52,7 @@ function addTaskToUList(tasks) {
         ul.appendChild(li);
 
         // Add event listener to p
-        let liText = document.querySelector(
-            "li#" + listPrefix + counter + " p"
-        );
+        let liText = document.querySelector("li#" + listPrefix + counter + " p");
         liText.addEventListener("click", onListItemClick);
 
         counter++;
@@ -114,24 +112,15 @@ function validateInput(input) {
     if (input.length >= minInputLength && input.length <= maxInputLength) {
         // Hide warning
         document.querySelector(".alert.alert-warning").style.padding = "0";
-        document.querySelector(".alert.alert-warning").style.visibility =
-            "hidden";
+        document.querySelector(".alert.alert-warning").style.visibility = "hidden";
 
         return true;
     } else {
         // Show warning
         document.querySelector(".alert.alert-warning").textContent =
-            "Längden på texten måste vara mellan " +
-            minInputLength +
-            " och " +
-            maxInputLength +
-            "!";
-        document.querySelector(
-            ".warning-row .alert.alert-warning"
-        ).style.padding = "12px";
-        document.querySelector(
-            ".warning-row .alert.alert-warning"
-        ).style.visibility = "visible";
+            "Längden på texten måste vara mellan " + minInputLength + " och " + maxInputLength + "!";
+        document.querySelector(".warning-row .alert.alert-warning").style.padding = "12px";
+        document.querySelector(".warning-row .alert.alert-warning").style.visibility = "visible";
 
         return false;
     }
