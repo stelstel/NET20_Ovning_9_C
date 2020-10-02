@@ -121,7 +121,11 @@ function validateInput(input) {
     } else {
         // Show warning
         document.querySelector(".alert.alert-warning").textContent =
-            "Längden på texten måste vara mellan 2 och 100!";
+            "Längden på texten måste vara mellan " +
+            minInputLength +
+            " och " +
+            maxInputLength +
+            "!";
         document.querySelector(
             ".warning-row .alert.alert-warning"
         ).style.padding = "12px";
