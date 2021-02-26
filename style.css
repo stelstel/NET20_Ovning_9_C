@@ -67,6 +67,7 @@ input#task {
 
 #taskList img {
     margin-left: 1.5vw;
+    float: right;
 }
 
 @media (max-width: 767px) {
@@ -84,6 +85,10 @@ li {
 li p {
     display: inline;
     word-break: break-word;
+}
+
+li:nth-child(even){
+    background: lightgray;
 }
 
 .warning-row {
