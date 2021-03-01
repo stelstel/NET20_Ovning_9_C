@@ -61,20 +61,24 @@ input#task {
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.75);
 }
 
+/**
 #taskList img {
     margin-bottom: 0.6vw;
 }
+**/
 
 #taskList img {
     margin-left: 1.5vw;
     float: right;
 }
 
+/**
 @media (max-width: 767px) {
     #taskList img {
         margin-bottom: 7px;
     }
 }
+**/
 
 li {
     cursor: pointer;
@@ -119,6 +123,7 @@ ul#taskList {
     border: 1px solid #555;
     padding-top: 5px;
     padding-bottom: 5px;
+    min-width: 250px;
 }
 
 @media (min-width: 768px) {
